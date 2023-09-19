@@ -1,10 +1,9 @@
 # MicroOrm.Dapper.Repositories
 
-[![ci](https://img.shields.io/github/actions/workflow/status/phnx47/dapper-repositories/ci.yml?branch=main&label=ci&logo=github)](https://github.com/phnx47/dapper-repositories/actions/workflows/ci.yml)
-[![NuGet](https://img.shields.io/nuget/v/MicroOrm.Dapper.Repositories.svg)](https://www.nuget.org/packages/MicroOrm.Dapper.Repositories)
-[![NuGet](https://img.shields.io/nuget/dt/MicroOrm.Dapper.Repositories.svg)](https://www.nuget.org/packages/MicroOrm.Dapper.Repositories)
-[![CodeFactor](https://www.codefactor.io/repository/github/phnx47/dapper-repositories/badge)](https://www.codefactor.io/repository/github/phnx47/dapper-repositories)
-[![License MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![ci](https://img.shields.io/github/actions/workflow/status/phnx47/dapper-repositories/ci.yml?branch=main&label=ci&logo=github%20actions&logoColor=white&style=flat-square)](https://github.com/phnx47/dapper-repositories/actions/workflows/ci.yml)
+[![nuget](https://img.shields.io/nuget/v/MicroOrm.Dapper.Repositories?logo=nuget&style=flat-square)](https://www.nuget.org/packages/MicroOrm.Dapper.Repositories)
+[![nuget](https://img.shields.io/nuget/dt/MicroOrm.Dapper.Repositories?logo=nuget&style=flat-square)](https://www.nuget.org/packages/MicroOrm.Dapper.Repositories)
+[![license](https://img.shields.io/github/license/phnx47/dapper-repositories?style=flat-square)](https://github.com/phnx47/dapper-repositories/blob/main/LICENSE)
 
 ## Description
 
@@ -32,7 +31,7 @@ dotnet add package MicroOrm.Dapper.Repositories
 From `System.ComponentModel.DataAnnotations` - Use for primary key.
 
 **[Identity]**
-Use for identity key.
+Property with an automatically incrementing identification number.
 
 **[Table]**
 From `System.ComponentModel.DataAnnotations.Schema` - By default the database table name will match the model name but it can be overridden with this.
@@ -186,40 +185,6 @@ Find all users for AccountId equals to 3 and not logical deleted:
 
 ```c#
 var allUsers = await userRepository.FindAllAsync(x => x.AccountId == 3 && x.Deleted != false);
-```
-
-### Example with Asp.Net Core and D.I
-
-#### Configure Services
-
-```c#
-//Your DB Provider
-MicroOrmConfig.SqlProvider = SqlProvider.MySQL;
-//Not required
-MicroOrmConfig.TablePrefix = "db1_";
-//Add generic SqlGenerator as singleton
-services.AddSingleton(typeof(ISqlGenerator<>), typeof(SqlGenerator<>));
-//Your db factory
-services.AddSingleton<IDbConnectionFactory, DbFactory>(x => new DbFactory(appSettings.DbConnectionString));
-```
-
-#### Example implements BaseRepository with `IDbConnectionFactory`
-
-```c#
-public class BaseRepository<T> : DapperRepository<T> where T : class
-{
-    private readonly IDbConnectionFactory _factory;
-    public BaseRepository(IDbConnectionFactory factory, ISqlGenerator<T> generator)
-        : base(factory.OpenDbConnection(), generator)
-    {
-        _factory = factory;
-    }
-
-    protected IDbConnection GetConnection()
-    {
-        return _factory.OpenDbConnection();
-    }
- }
 ```
 
 ## License
