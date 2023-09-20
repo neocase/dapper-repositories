@@ -1,29 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E409731D-9AB4-4389-B611-53A3AF8324A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{94F86B38-C3FB-4FBB-802E-7786C457050D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroOrm.Dapper.Repositories", "src\MicroOrm.Dapper.Repositories.csproj", "{A8258060-EDF7-4713-9428-088ADD6FE503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroOrm.Dapper.Repositories", "src\MicroOrm.Dapper.Repositories.csproj", "{A8258060-EDF7-4713-9428-088ADD6FE503}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClasses", "tests\TestClasses\TestClasses.csproj", "{2691E152-7033-4C25-A8D5-4941004BD611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClasses", "tests\TestClasses\TestClasses.csproj", "{2691E152-7033-4C25-A8D5-4941004BD611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlGenerator.Tests", "tests\SqlGenerator.Tests\SqlGenerator.Tests.csproj", "{0D5ADDAF-B82B-479E-9000-295162C4679B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.Base", "tests\Repositories.Base\Repositories.Base.csproj", "{C927DED2-5B55-4FE8-9F62-C2D8BE4922B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.Base", "tests\Repositories.Base\Repositories.Base.csproj", "{C927DED2-5B55-4FE8-9F62-C2D8BE4922B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.MSSQL.Tests", "tests\Repositories.MSSQL.Tests\Repositories.MSSQL.Tests.csproj", "{5049285B-1366-41C2-AD7C-4F70B11BFD5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.MSSQL.Tests", "tests\Repositories.MSSQL.Tests\Repositories.MSSQL.Tests.csproj", "{5049285B-1366-41C2-AD7C-4F70B11BFD5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.MySql.Tests", "tests\Repositories.MySql.Tests\Repositories.MySql.Tests.csproj", "{E0118ECB-F93A-4297-9D3F-0E2AC7C709A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.MySql.Tests", "tests\Repositories.MySql.Tests\Repositories.MySql.Tests.csproj", "{E0118ECB-F93A-4297-9D3F-0E2AC7C709A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.Oracle.Tests", "tests\Repositories.Oracle.Tests\Repositories.Oracle.Tests.csproj", "{9F38EB03-41AD-4CAD-9903-12E0E890FF41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.Oracle.Tests", "tests\Repositories.Oracle.Tests\Repositories.Oracle.Tests.csproj", "{9F38EB03-41AD-4CAD-9903-12E0E890FF41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.PostgreSQL.Tests", "tests\Repositories.PostgreSQL.Tests\Repositories.PostgreSQL.Tests.csproj", "{BFBD1CAD-3831-4815-A95C-6A43F8E9FAEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.PostgreSQL.Tests", "tests\Repositories.PostgreSQL.Tests\Repositories.PostgreSQL.Tests.csproj", "{BFBD1CAD-3831-4815-A95C-6A43F8E9FAEE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories.SQLite.Tests", "tests\Repositories.SQLite.Tests\Repositories.SQLite.Tests.csproj", "{5AD638E4-639A-425E-857E-60EB21CBCBC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories.SQLite.Tests", "tests\Repositories.SQLite.Tests\Repositories.SQLite.Tests.csproj", "{5AD638E4-639A-425E-857E-60EB21CBCBC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +37,6 @@ Global
 		{2691E152-7033-4C25-A8D5-4941004BD611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2691E152-7033-4C25-A8D5-4941004BD611}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2691E152-7033-4C25-A8D5-4941004BD611}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0D5ADDAF-B82B-479E-9000-295162C4679B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0D5ADDAF-B82B-479E-9000-295162C4679B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0D5ADDAF-B82B-479E-9000-295162C4679B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0D5ADDAF-B82B-479E-9000-295162C4679B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C927DED2-5B55-4FE8-9F62-C2D8BE4922B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C927DED2-5B55-4FE8-9F62-C2D8BE4922B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C927DED2-5B55-4FE8-9F62-C2D8BE4922B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,7 +68,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A8258060-EDF7-4713-9428-088ADD6FE503} = {E409731D-9AB4-4389-B611-53A3AF8324A4}
 		{2691E152-7033-4C25-A8D5-4941004BD611} = {94F86B38-C3FB-4FBB-802E-7786C457050D}
-		{0D5ADDAF-B82B-479E-9000-295162C4679B} = {94F86B38-C3FB-4FBB-802E-7786C457050D}
 		{C927DED2-5B55-4FE8-9F62-C2D8BE4922B6} = {94F86B38-C3FB-4FBB-802E-7786C457050D}
 		{5049285B-1366-41C2-AD7C-4F70B11BFD5C} = {94F86B38-C3FB-4FBB-802E-7786C457050D}
 		{E0118ECB-F93A-4297-9D3F-0E2AC7C709A4} = {94F86B38-C3FB-4FBB-802E-7786C457050D}
